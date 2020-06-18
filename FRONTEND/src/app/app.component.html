@@ -2,15 +2,23 @@
 <mat-toolbar color="primary" class="toolbar" dir ="rtl">
     <mat-toolbar-row>
       
-        <div class="title"> Location de voitures </div>
+        <div class="title"[routerLink]='["/"]'> Location de voitures </div>
         <mat-icon style="font-size: 35px;margin-left: 5%;" (click)="drawer.toggle() ">menu_open</mat-icon>
     </mat-toolbar-row>
   </mat-toolbar>
   <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p>VOITURES</p>
-      <p>CLIENTS</p>
-      <p>FACTURES</p>
+      <ul>
+        <li><button mat-button [routerLink]='["/"]'>ACCUEIL   </button></li>
+
+        <li><button mat-button [routerLink]='["/gestionVoiture/listVoiture"]'>VOITURES   </button></li>
+        <li> <button mat-button>CLIENTS</button></li>
+        <li><button mat-button>FACTURES</button></li>
+      </ul>
+      
+     
+      
+      
     </mat-drawer>
   
     <div class="example-sidenav-content">

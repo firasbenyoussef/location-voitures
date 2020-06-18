@@ -1,0 +1,25 @@
+<form [formGroup]=ajoutVoitureForm (ngSubmit)="onSubmit()">
+
+    <label>
+        Nom Voiture :
+       <input type="text" formControlName="nomVoiture">
+
+    </label>
+
+    <label>
+        Numero de Serie :
+        <input matInput type="text" formControlName="numSerie">
+        
+            </label>
+            <label>
+        CIN :
+        <input type="text" formControlName="cin">
+        
+            </label>
+            <label>
+        Numero de Téléphone  :
+        <input type="text" formControlName="numTel">
+        
+            </label>
+            <button type="submit" [disabled]="!ajoutVoitureForm.valid" > Submit</button>
+</form>
