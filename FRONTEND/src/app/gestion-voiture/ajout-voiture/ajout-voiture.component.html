@@ -1,25 +1,25 @@
-<form [formGroup]=ajoutVoitureForm (ngSubmit)="onSubmit()">
 
-    <label>
-        Nom Voiture :
-       <input type="text" formControlName="nomVoiture">
+<div class="container-fluid">
+<form class="example-form" [formGroup]=ajoutVoitureForm (ngSubmit)="onSubmit()">
+   
+        <mat-form-field class="example-full-width">
+          <mat-label> Nom Voiture :</mat-label>
+          <input matInput placeholder="Ex. Honda" >
+        </mat-form-field>
+   
 
-    </label>
-
-    <label>
-        Numero de Serie :
-        <input matInput type="text" formControlName="numSerie">
+        <mat-form-field class="example-full-width">
+            <mat-label> Numero De Serie :</mat-label>
+            <input matInput placeholder="Ex.*** TU ***" >
+          </mat-form-field>
+     
+          
         
-            </label>
-            <label>
-        CIN :
-        <input type="text" formControlName="cin">
-        
-            </label>
-            <label>
-        Numero de Téléphone  :
-        <input type="text" formControlName="numTel">
-        
-            </label>
-            <button type="submit" [disabled]="!ajoutVoitureForm.valid" > Submit</button>
 </form>
+
+
+</div>
+
+<br>
+<button  mat-raised-button color="primary" [disabled]="!ajoutVoitureForm.valid">Valider</button>
+

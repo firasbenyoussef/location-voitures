@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 
 .toolbar{
-    background: darkblue;
+    background: darkblue ;
 }
 .sidenav{
     background: darkblue ;
@@ -51,5 +51,12 @@ margin: 0 auto;
   }
   
   .example-sidenav {
+
     padding: 5%;
+  }
+  .bg-img {
+    background-image: url('/assets/logo.jpg');
+    background-size: cover;
+    height: 100%;
+    padding-top: 2%;
   }

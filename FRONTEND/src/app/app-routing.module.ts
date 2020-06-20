@@ -8,12 +8,13 @@ const routes: Routes = [ {
     .then(mod => mod.GestionVoitureModule)
 
 },
-{
-  path: 'ajoutVoiture',
-  loadChildren: () => import('./gestion-voiture/gestion-voiture.module')
-    .then(mod => mod.GestionVoitureModule)
 
-},
+{
+  path: 'gestionClient',
+  loadChildren: () => import('./gestion-Client/gestion-Client.module')
+    .then(mod => mod.GestionClientModule)
+
+}
 
 
 
