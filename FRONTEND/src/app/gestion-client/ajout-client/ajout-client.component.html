@@ -1,0 +1,46 @@
+
+
+
+<form class="example-form" [formGroup]=ajoutClientForm (ngSubmit)="onSubmit()">
+   
+    <mat-form-field class="example-full-width">
+      <mat-label> Nom :</mat-label>
+      <input matInput placeholder="Ex. Honda" >
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+        <mat-label> Prénom :</mat-label>
+        <input matInput placeholder="Ex.*** TU ***" >
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label> CIN :</mat-label>
+        <input matInput placeholder="Ex.CIN" >
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label> Numero Teléphone :</mat-label>
+        <input matInput placeholder="Ex.+216..." >
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label> Adresse :</mat-label>
+        <input matInput placeholder="Ex.adresse" >
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label> Email :</mat-label>
+        <input matInput placeholder="Ex@email.com" >
+      </mat-form-field>
+ 
+      
+    
+</form>
+
+
+
+
+<br>
+<button  mat-raised-button color="primary" [disabled]="!ajoutClientForm.valid">Valider</button>
+
