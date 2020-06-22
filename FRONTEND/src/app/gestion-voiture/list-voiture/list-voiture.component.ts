@@ -9,7 +9,7 @@ const ELEMENT_DATA: any[] = [];
   styleUrls: ['./list-voiture.component.css']
 })
 export class ListVoitureComponent implements OnInit {
-  displayedColumns: string[] = ['marque', 'couleur', 'matricule','Dispo','date','modifier','supprimer'];
+  displayedColumns: string[] = ['index','marque', 'couleur', 'matricule','Dispo','date','modifier','supprimer'];
   dataSource = new MatTableDataSource<any>(ELEMENT_DATA);
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -27,6 +27,7 @@ export class ListVoitureComponent implements OnInit {
     // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < this.listesVoitures.length; i++) {
       console.log(this.listesVoitures[i])
+      this.listesVoitures[i].idVoiture=i+1;
       ELEMENT_DATA.push(this.listesVoitures[i]);
     }
     this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA);
