@@ -11,5 +11,5 @@ public interface VoitureService {
 	List<VoitureDTO> findDisponnible();
 	List<VoitureDTO> findOccupe();
 	Boolean deleteByMatricule(String matricule);
-	String addVoiture(VoitureDTO voiture);
+	VoitureDTO addVoiture(VoitureDTO voiture);
 }

@@ -8,12 +8,11 @@
   </mat-toolbar>
   
 
-  <mat-drawer-container class="example-container" autosize>
+  <mat-drawer-container class="example-container" >
     <mat-drawer #drawer class="example-sidenav" mode="side">
 
       <ul>
         <li><button mat-button [routerLink]='["/"]'>ACCUEIL   </button></li>
-
         <li><button mat-button [routerLink]='["/gestionVoiture/listVoiture"]'>VOITURES   </button></li>
         <li> <button mat-button [routerLink]='["/gestionClient/listClient"]'>CLIENTS     </button></li>
         <li><button mat-button>FACTURES</button></li>
@@ -24,12 +23,11 @@
       
     </mat-drawer>
 
-    <div class="bg-img">
 
     <div class="example-sidenav-content">
       <router-outlet></router-outlet>
       </div>
-    </div>
+
     
   </mat-drawer-container>
 

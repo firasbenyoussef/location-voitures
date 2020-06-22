@@ -37,8 +37,9 @@ public class VoitureController
 		return ResponseEntity.ok(voitureService.findOccupe());
 	}
 	@PostMapping("/saveOne")
-	public ResponseEntity<String> saveVoiture(@RequestBody VoitureDTO voiture)
+	public ResponseEntity<VoitureDTO> saveVoiture(@RequestBody VoitureDTO voiture)
 	{
 		return ResponseEntity.ok(voitureService.addVoiture(voiture));
+		
 	}
 }

@@ -39,12 +39,12 @@ public class VoitureServiceIMPL implements VoitureService {
 	@Override
 	public List<VoitureDTO> findDisponnible() {
 		
-		return voitureMapper.toDtos(voitureRepo.findByDisponnibilite(true));
+		return voitureMapper.toDtos(voitureRepo.findByDisponibilite(true));
 	}
 
 	@Override
 	public List<VoitureDTO> findOccupe() {
-		return voitureMapper.toDtos(voitureRepo.findByDisponnibilite(false));
+		return voitureMapper.toDtos(voitureRepo.findByDisponibilite(false));
 	}
 
 	@Override
@@ -54,17 +54,8 @@ public class VoitureServiceIMPL implements VoitureService {
 	}
 
 	@Override
-	public String addVoiture(VoitureDTO voiture) {
-		Voiture t = voitureMapper.toEntity(voiture);
-		Voiture temp = voitureRepo.save(t);
-		if(temp==null)
-		{
-			return("Done");
-		}
-		else
-		{
-			return ("Not Done");
-		}
+	public VoitureDTO addVoiture(VoitureDTO voiture) {
+		return voitureMapper.toDto(voitureRepo.save(voitureMapper.toEntity(voiture)));
 	}
 
 }

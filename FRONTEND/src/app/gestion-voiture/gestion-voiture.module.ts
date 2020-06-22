@@ -7,7 +7,7 @@ import { ListVoitureComponent } from './list-voiture/list-voiture.component';
 import {MatButtonModule} from '@angular/material/button';
 import { AjoutVoitureComponent } from './ajout-voiture/ajout-voiture.component';
 import { MatTableModule, MatFormField, MatLabel, MatInput, MatFormFieldModule, MatInputModule } from '@angular/material';
-
+import {MatStepperModule} from '@angular/material/stepper';
 @NgModule({
   declarations: [ListVoitureComponent, AjoutVoitureComponent],
   imports: [
@@ -18,6 +18,7 @@ import { MatTableModule, MatFormField, MatLabel, MatInput, MatFormFieldModule, M
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
+    MatStepperModule
    
     
   ]

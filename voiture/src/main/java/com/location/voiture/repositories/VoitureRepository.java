@@ -11,5 +11,5 @@ import com.location.voiture.entities.Voiture;
 public interface VoitureRepository extends JpaRepository<Voiture, Long> 
 {
 	Voiture findByMarque(String marque);
-	List<Voiture> findByDisponnibilite(Boolean dispo);
+	List<Voiture> findByDisponibilite(Boolean dispo);
 }

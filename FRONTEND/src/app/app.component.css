@@ -9,7 +9,7 @@
 .title{
 
 font-size: 2.5vw;
-line-height: 20px;
+line-height: 20%;
 display: table;
 color: #F7DFA3;
 margin-top:1%!important;
@@ -44,19 +44,11 @@ margin: 0 auto;
   }
   
   .example-sidenav-content {
-    display: flex;
+
     height: 100%;
-    align-items: center;
-    justify-content: center;
   }
   
   .example-sidenav {
 
     padding: 5%;
-  }
-  .bg-img {
-    background-image: url('/assets/logo.jpg');
-    background-size: cover;
-    height: 100%;
-    padding-top: 2%;
   }

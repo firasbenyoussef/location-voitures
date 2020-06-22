@@ -9,6 +9,6 @@ public class VoitureDTO
 	private String matricule;
 	private String marque;
 	private String couleur;
-	private Boolean disponnibilite;
+	private Boolean disponibilite;
 
 }

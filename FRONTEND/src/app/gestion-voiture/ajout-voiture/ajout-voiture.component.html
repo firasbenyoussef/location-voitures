@@ -1,25 +1,24 @@
 
-<div class="container-fluid">
-<form class="example-form" [formGroup]=ajoutVoitureForm (ngSubmit)="onSubmit()">
+<div class="container-fluid cont">
+  <i class="material-icons">
+    <img class="img-icon" src="assets/logo.jpg" />
+  </i>
+<form [formGroup]=ajoutVoitureForm (ngSubmit)="onSubmit()">
    
         <mat-form-field class="example-full-width">
-          <mat-label> Nom Voiture :</mat-label>
-          <input matInput placeholder="Ex. Honda" >
+          <mat-label> Matricule :</mat-label>
+          <input matInput placeholder="*****" formControlName="matricule">
         </mat-form-field>
-   
-
         <mat-form-field class="example-full-width">
-            <mat-label> Numero De Serie :</mat-label>
-            <input matInput placeholder="Ex.*** TU ***" >
-          </mat-form-field>
-     
-          
-        
+          <mat-label> Marque :</mat-label>
+          <input matInput placeholder="*****" formControlName="marque">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label> Couleur :</mat-label>
+          <input matInput placeholder="*****" formControlName="couleur">
+        </mat-form-field>
+        <br>
+<button  type ="submit" class="btn "mat-raised-button color="primary" [disabled]="!ajoutVoitureForm.valid">Valider</button>
+<button  type="reset" mat-raised-button color="primary" >Annuler</button>
 </form>
-
-
 </div>
-
-<br>
-<button  mat-raised-button color="primary" [disabled]="!ajoutVoitureForm.valid">Valider</button>
-

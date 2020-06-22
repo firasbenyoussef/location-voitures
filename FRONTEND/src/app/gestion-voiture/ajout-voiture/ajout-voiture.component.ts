@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, } from '@angular/forms'
-import { Validators} from '@angular/forms'
+import { FormGroup, FormControl, Validators, } from '@angular/forms'
+import { VoitureService} from '../../services/voiture.service';
+import {Voiture } from '../../shared/Models/Voiture';
 @Component({
   selector: 'app-ajout-voiture',
   templateUrl: './ajout-voiture.component.html',
-  styleUrls: ['./ajout-voiture.component.css']
+  styleUrls: ['./ajout-voiture.component.css'] 
 })
 export class AjoutVoitureComponent implements OnInit {
   ajoutVoitureForm : any;
-  constructor() { }
+  newVoiture:Voiture;
+  constructor(private voitureService : VoitureService) {
+  } 
 
   ngOnInit() {
     this.initForm();
@@ -16,16 +19,33 @@ export class AjoutVoitureComponent implements OnInit {
   initForm()
   {
     this.ajoutVoitureForm = new FormGroup ({
-      nomVoiture: new FormControl (' ',Validators.required),
-      numSerie: new FormControl (' '),
-      cin : new FormControl (' '),
-      numTel : new FormControl (' ')});
-      console.log(this.ajoutVoitureForm.value);
+      matricule: new FormControl (' ',Validators.required),
+      marque : new FormControl (' ',Validators.required),
+      couleur : new FormControl (' ',Validators.required)});
   }
-  onSubmit() {
-   // console.warn(this.ajoutVoitureForm.value);
-   // console.log(this.ajoutVoitureForm.controls['nom'].value );
-    console.log(this.ajoutVoitureForm);
 
+  onSubmit() {
+    this.newVoiture= new Voiture();
+    this.newVoiture.matricule=this.ajoutVoitureForm.controls.matricule.value;
+    this.newVoiture.marque=this.ajoutVoitureForm.controls.marque.value;
+    this.newVoiture.couleur=this.ajoutVoitureForm.controls.couleur.value;
+    this.newVoiture.disponibilite=true;
+    this.voitureService.addVoiture(this.newVoiture).subscribe(
+      data=>
+      {
+        console.log(data);
+        this.ajoutVoitureForm.reset();
+      },
+      error =>
+      {
+        this.ajoutVoitureForm.reset();
+        
+      }
+    )
+
+  }
+  addVoiture()
+  {
+    
   }
 }

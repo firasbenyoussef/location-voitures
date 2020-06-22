@@ -19,5 +19,5 @@ public class Voiture
 	private String matricule;
 	private String marque;
 	private String couleur;
-	private Boolean disponnibilite;
+	private Boolean disponibilite;
 }
